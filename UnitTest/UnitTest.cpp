@@ -17,7 +17,15 @@ namespace UnitTest
 		TEST_METHOD(OneElementArrayTest) {
 			InsertionSort method{};
 			vector<int> testArray{ 1 };
-			Assert::AreEqual(0, 0);
+			const int expectedPermutations = 0;
+			const int expectedComparisons = 0;
+
+			method.Sort(testArray);
+			int actualPermutations = method.GetPermutations();
+			int actualComparisons = method.GetComparisons();
+
+			Assert::AreEqual(expectedComparisons, actualComparisons);
+			Assert::AreEqual(expectedPermutations, actualPermutations);
 		}
 
 		TEST_METHOD(EqualElementArrayTest) {

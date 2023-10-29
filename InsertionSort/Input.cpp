@@ -76,7 +76,7 @@ void Input::ConsoleInput(vector<int>& array)
 	int arraySize = GetInt("\nEnter number of elements in array\n\n>>");
 	array.resize(arraySize);
 
-	cout << "\nEnter " << arraySize << "elements:\n";
+	cout << "\nEnter " << arraySize << " elements:\n";
 	for (auto index = 0; index < arraySize; index++) array[index] = GetInt(">>");
 
 	PrintCurrentArray(array);
