@@ -2,21 +2,24 @@
 
 void IgnoreLine()
 {
+	//игнорирование последовательности символов длиной максимального размера потока
 	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
-int GetInt(string message)
+int GetMenuOption(string message)
 {
 	cout << message;
 	int tmp = 0;
 	while (true) {
 		cin >> tmp;
+		//если считывание не удалось убираем ошибку, игнорируем строку потока
 		if (cin.fail()) {
 			cin.clear();
 			IgnoreLine();
 			cout << "\nUse correct values!\n\n";
 			cout << message;
 		}
+		//если значение неположительное, то делаем то же, что и выше
 		else if (tmp <= 0) {
 			cout << "\nValue must be >0\n\n";
 			cin.clear();
@@ -30,23 +33,25 @@ int GetInt(string message)
 	}
 }
 
-//double GetDouble(string message)
-//{
-//	cout << message;
-//	double tmp = 0.0;
-//	while (true) {
-//		cin >> tmp;
-//		if (cin.fail()) {
-//			cin.clear();
-//			IgnoreLine();
-//			cout << "\nUse correct values!\n\n";
-//			cout << message;
-//			continue;
-//		}
-//		IgnoreLine();
-//		return tmp;
-//	}
-//}
+int GetInt(string message)
+{
+	cout << message;
+	int tmp = 0;
+	while (true) {
+		cin >> tmp;
+		//если считывание не удалось убираем ошибку, игнорируем строку потока
+		if (cin.fail()) {
+			cin.clear();
+			IgnoreLine();
+			cout << "\nUse correct values!\n\n";
+			cout << message;
+		}
+		else {
+			IgnoreLine();
+			return tmp;
+		}
+	}
+}
 
 string GetLink(string message)
 {
@@ -63,12 +68,14 @@ char GetAnswer(string message)
 	cout << message;
 	while (true) {
 		cin >> tmp;
+		//если ничего не введено
 		if (tmp == '\n') {
 			cout << "You must type y or n!\n\n";
 			cout << message;
 			cin.clear();
 			IgnoreLine();
 		}
+		//если введен не один символ
 		else if (getchar() != '\n') {
 			cout << "Incorrect input! Type only y or n!\n\n";
 			cout << message;

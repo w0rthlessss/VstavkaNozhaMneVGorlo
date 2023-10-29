@@ -13,7 +13,7 @@ namespace UnitTest
 	TEST_CLASS(UnitTest)
 	{
 	public:
-		
+		//тестирование сортировки массива, состоящего из одного элемента
 		TEST_METHOD(OneElementArrayTest) {
 			InsertionSort method{};
 			vector<int> testArray{ 1 };
@@ -27,7 +27,7 @@ namespace UnitTest
 			Assert::AreEqual(expectedComparisons, actualComparisons);
 			Assert::AreEqual(expectedPermutations, actualPermutations);
 		}
-
+		//тестирование сортировки массива, состоящего из одинаковых элементов
 		TEST_METHOD(EqualElementArrayTest) {
 			InsertionSort method{};
 			vector<int> testArray{ 5,5,5,5,5 };
@@ -39,7 +39,7 @@ namespace UnitTest
 			Assert::AreEqual(expectedPermutations, actualPermutations);
 
 		}
-
+		//тестирование ввода не целочисленных значений
 		TEST_METHOD(LettersAreNotAllowedTest) {
 			istringstream testStream("576dead%\n\n");
 			streambuf* cinbuf = cin.rdbuf(testStream.rdbuf());

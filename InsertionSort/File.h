@@ -12,6 +12,8 @@ protected:
 public:
 	File();
 	virtual ~File();
+	//функция предлагающая сохранить введённые / отсортированные данные в файла
 	char SaveResults(string message);
+	//чистая виртуальная фунция для открытия файла
 	virtual void OpenFile() = 0;
 };
