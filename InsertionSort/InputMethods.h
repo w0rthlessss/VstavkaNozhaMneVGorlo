@@ -12,7 +12,7 @@ void IgnoreLine();
 
 int GetInt(string message);
 
-double GetDouble(string message);
+//double GetDouble(string message);
 
 string GetLink(string message);
 

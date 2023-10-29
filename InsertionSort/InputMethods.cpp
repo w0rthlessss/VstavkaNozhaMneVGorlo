@@ -30,23 +30,23 @@ int GetInt(string message)
 	}
 }
 
-double GetDouble(string message)
-{
-	cout << message;
-	double tmp = 0.0;
-	while (true) {
-		cin >> tmp;
-		if (cin.fail()) {
-			cin.clear();
-			IgnoreLine();
-			cout << "\nUse correct values!\n\n";
-			cout << message;
-			continue;
-		}
-		IgnoreLine();
-		return tmp;
-	}
-}
+//double GetDouble(string message)
+//{
+//	cout << message;
+//	double tmp = 0.0;
+//	while (true) {
+//		cin >> tmp;
+//		if (cin.fail()) {
+//			cin.clear();
+//			IgnoreLine();
+//			cout << "\nUse correct values!\n\n";
+//			cout << message;
+//			continue;
+//		}
+//		IgnoreLine();
+//		return tmp;
+//	}
+//}
 
 string GetLink(string message)
 {
